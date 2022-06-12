@@ -1,0 +1,29 @@
+name = "Home"
+kind = {Python={}}
+
+templates_path = "templates/"
+
+[[endpoints]]
+regex="/"
+kind = {View = {template="home/index.html", apis={nodes={node="system", api="nodes", parameters={tag="web_app_root"}}}}}
+
+[[endpoints]]
+regex="/configure/apps"
+kind = {View = {template="home/configure/apps.html", apis={nodes={node="system", api="nodes", parameters={tag="web_app_root"}}}}}
+
+[[endpoints]]
+regex="/configure/logs"
+kind = {View = {template="home/configure/logs.html", apis={nodes={node="system", api="nodes", parameters={tag="web_app_root"}}, logs={node="system", api="app_log"}}}}
+
+[[endpoints]]
+regex="/js(/.*)"
+kind = {Static={path="static/js/"}}
+
+[[endpoints]]
+regex="/css(/.*)"
+kind = {Static={path="static/css/"}}
+
+[[endpoints]]
+regex="/rsc(/.*)"
+kind = {Static={path="static/rsc/"}}
+
