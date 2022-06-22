@@ -1,19 +1,19 @@
 name = "Home"
-kind = {Python={}}
+kind = {Python={venv="venv"}}
 
 templates_path = "templates/"
 
 [[endpoints]]
 regex="/"
-kind = {View = {template="home/index.html", apis={nodes={node="system", api="nodes", parameters={tag="web_app_root"}}}}}
+kind = {View = {template="Home/index.html", apis={nodes={node="system", api="nodes", parameters={tag="web_app_root"}}}}}
 
 [[endpoints]]
 regex="/configure/apps"
-kind = {View = {template="home/configure/apps.html", apis={nodes={node="system", api="nodes", parameters={tag="web_app_root"}}}}}
+kind = {View = {template="Home/configure/apps.html", apis={nodes={node="system", api="nodes", parameters={tag="web_app_root"}}}}}
 
 [[endpoints]]
 regex="/configure/logs"
-kind = {View = {template="home/configure/logs.html", apis={nodes={node="system", api="nodes", parameters={tag="web_app_root"}}, logs={node="system", api="app_log"}}}}
+kind = {View = {template="Home/configure/logs.html", apis={nodes={node="system", api="nodes", parameters={tag="web_app_root"}}, logs={node="system", api="app_log"}}}}
 
 [[endpoints]]
 regex="/js(/.*)"
