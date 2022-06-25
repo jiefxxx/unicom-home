@@ -22,6 +22,13 @@ app.controller('appsController', function($scope, $http, $uibModal, $interval){
         });
     }
 
+    $scope.start_app = function(app){
+        $http.get("/system/apps/update?name="+app[0])
+        .then(function(response){
+            console.log(response);
+        });
+    }
+
     $scope.refresh();
     $interval(function () { $scope.refresh(); }, 3000);
 });
